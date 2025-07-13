@@ -1,0 +1,31 @@
+{
+  "name": "FB downloader",
+  "version": "1.0.0",
+  "description": "extension designed to download files from Facebook page.",
+  "manifest_version": 3,
+  "author": "Orkur",
+  "action":{
+    "default_popup": "index.html",
+    "default_title": "FB downloader"
+  },
+  "background": {
+    "service_worker": "dist/backgroundRequests.js"
+  },
+  "permissions": [
+    "webRequest",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "ffmpeg-core.js",
+        "ffmpeg-core.wasm",
+        "ffmpeg-core.worker.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
